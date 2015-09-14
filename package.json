@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Minify ASP.NET Razor CSHTML",
   "dependencies": {
-    "istextorbinary": "1.0.2",
     "readable-stream": "^2.0.1",
     "replacestream": "^4.0.0"
   },
