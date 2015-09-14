@@ -1,0 +1,40 @@
+{
+  "name": "gulp-minify-cshtml",
+  "version": "0.0.1",
+  "description": "Minify ASP.NET Razor CSHTML",
+  "dependencies": {
+    "istextorbinary": "1.0.2",
+    "readable-stream": "^2.0.1",
+    "replacestream": "^4.0.0"
+  },
+  "devDependencies": {
+    "concat-stream": "^1.5.0",
+    "mocha": "^2.1.0",
+    "should": "^7.0.1",
+    "vinyl": "^0.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RehanSaeed/gulp-minify-cshtml.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "minify",
+    "html",
+    "cshtml",
+    "asp.net",
+    "razor",
+    "mvc"
+  ],
+  "author": "Muhammad Rehan Saeed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RehanSaeed/gulp-minify-cshtml/issues"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
