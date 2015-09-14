@@ -23,14 +23,29 @@ module.exports = function(options) {
           var temp = String(file.contents);
           
           if (options && options.comments) {
+            // <!--    - Match the start of the comment.
+            // [\s\S]* - Match anything in between.
+            // ?       - Or nothing at all.
+            // -->     - Match the end of the comment.
+            // g       - Match globally.
             temp = temp.replace(/<!--[\s\S]*?-->/g, '');
           }
           
           if (options || options.razorComments) {
+            // @\*     - Match the start of the comment.
+            // [\s\S]* - Match anything in between.
+            // ?       - Or nothing at all.
+            // \*@     - Match the end of the comment.
+            // g       - Match globally.
             temp = temp.replace(/@\*[\s\S]*?\*@/g, '');
           }
           
           if (options || options.whitespace) {
+            // >           - Match the end of a tag.
+            // [\s]*       - Match any white-space.
+            // \<          - Match the start of a tag.
+            // (?!(\/pre)) - Do not match /pre. This stops removing white space between pre tags.
+            // gi          - Match globally and case insensitive.
             temp = temp.replace(/>[\s]*\<(?!(\/pre))/gi, '><');
           }
           
