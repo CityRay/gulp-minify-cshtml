@@ -1,5 +1,5 @@
 # gulp-minify-cshtml [![NPM version][npm-image]][npm-url]
-> Minify ASP.NET Razor CSHTML
+Minify ASP.NET Razor Views (.cshtml files).
 
 ## Usage
 
@@ -62,7 +62,18 @@ Remove Razor comments `@* *@`
 Type: `boolean`  
 Default: `true`
 
-Remove white-space
+Remove white-space between angle brackets `> <`
+
+## Known Issues and Limitations
+
+This plugin is not doing proper Razor and HTML parsing (That would be a very big project). It uses simple regular expressions to do the replacements which works in all cases except those unlikely cases listed below.
+
+If you have strings in your Razor C# code like the two lines below, they will be wrongly modified. The workaround is to split up the string.
+
+```
+string a = ">   <"; // Will be changed to "><". Use "> " + " <" instead.
+string b = "@* *@"; // Will be changed to "". Use "@* " + " *@" instead.
+```
 
 [npm-url]: https://npmjs.org/package/gulp-minify-cshtml
 [npm-image]: https://badge.fury.io/js/gulp-minify-cshtml.svg
