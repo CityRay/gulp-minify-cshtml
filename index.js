@@ -22,6 +22,8 @@ module.exports = function(options) {
           
           var temp = String(file.contents);
           
+          // Ideas: https://github.com/kangax/html-minifier/blob/gh-pages/tests/minifier.js
+          
           if ((options !== undefined) && options.comments) {
             // <!--    - Match the start of the comment.
             // [\s\S]* - Match anything in between.
