@@ -22,7 +22,7 @@ module.exports = function(options) {
           
           var temp = String(file.contents);
           
-          if (options && options.comments) {
+          if ((options !== undefined) && options.comments) {
             // <!--    - Match the start of the comment.
             // [\s\S]* - Match anything in between.
             // ?       - Or nothing at all.
@@ -31,7 +31,7 @@ module.exports = function(options) {
             temp = temp.replace(/<!--[\s\S]*?-->/g, '');
           }
           
-          if (options || options.razorComments) {
+          if ((options === undefined) || options.razorComments) {
             // @\*     - Match the start of the comment.
             // [\s\S]* - Match anything in between.
             // ?       - Or nothing at all.
@@ -40,7 +40,7 @@ module.exports = function(options) {
             temp = temp.replace(/@\*[\s\S]*?\*@/g, '');
           }
           
-          if (options || options.whitespace) {
+          if ((options === undefined) || options.whitespace) {
             // >           - Match the end of a tag.
             // [\s]*       - Match any white-space.
             // \<          - Match the start of a tag.
